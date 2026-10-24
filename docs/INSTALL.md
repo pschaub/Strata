@@ -186,8 +186,9 @@ git clone https://github.com/Niko1221/Strata.git && cd Strata
   (`bin/strata` is the same `strata` command as the Terminal's: `bin/strata --help` lists the rest.)
 - **Only compile, without the installer:** the engine is a normal CMake project. For NVIDIA:
   `cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DSTRATA_ENABLE_CUDA=ON -DCMAKE_CUDA_ARCHITECTURES=native &&
-  cmake --build build --target strata -j8`. The options, and the flags setup passes, are in `setup.py` (search for
-  `-DSTRATA_`).
+  cmake --build build --target strata -j8`. `native` builds for the cards in this PC. Without the option it builds
+  for RTX 50 (`120`); name another card's number (`75` RTX 20, `86` RTX 30, `89` RTX 40) to build for it. The options,
+  and the flags setup passes, are in `setup.py` (search for `-DSTRATA_`).
 
 ## From source: Mac
 
